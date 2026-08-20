@@ -406,11 +406,18 @@
     border-top:1px dashed #D9C9B4;
   }
   .historia-firma .avatar-firma{
-    width:44px; height:44px; border-radius:50%; flex:none;
+    width:64px; height:64px; border-radius:50%; flex:none;
     background:var(--rojo); color:var(--crema);
     display:flex; align-items:center; justify-content:center;
     font-family:var(--display); font-weight:800; font-size:.95rem;
     border:2px dashed var(--amarillo);
+    position:relative; overflow:hidden;
+  }
+  .historia-firma .avatar-firma img{
+    position:absolute; inset:0;
+    width:100%; height:100%;
+    object-fit:cover;
+    object-position:center 15%;
   }
   .historia-firma strong{font-family:var(--display); font-size:.95rem; display:block;}
   .historia-firma span{font-size:.82rem; color:var(--tinta-suave);}
@@ -427,7 +434,7 @@
   .marco-mapa{
     border-radius:12px; overflow:hidden;
     border:2px solid var(--tinta);
-    aspect-ratio:16/8;
+    aspect-ratio:16/9;
     background:var(--crema);
   }
   .marco-mapa iframe{width:100%; height:100%; border:0; display:block;}
@@ -602,20 +609,6 @@
     display:block; margin:10px auto 0; font-size:.78rem;
     color:var(--tinta-suave); text-decoration:underline; font-weight:600;
   }
-  .historia-firma .avatar-firma{
-  width:64px; height:64px; border-radius:50%; flex:none;
-  background:var(--rojo); color:var(--crema);
-  display:flex; align-items:center; justify-content:center;
-  font-family:var(--display); font-weight:800; font-size:.95rem;
-  border:2px dashed var(--amarillo);
-  position:relative; overflow:hidden;
-}
-.historia-firma .avatar-firma img{
-  position:absolute; inset:0;
-  width:100%; height:100%;
-  object-fit:cover;
-  object-position:center 15%;
-}
 </style>
 </head>
 <body>
@@ -709,7 +702,7 @@
         <div class="item-foto">
           <!-- FOTO: Alitas BBQ — pega el link o ruta de la imagen en el src -->
           <img src="img/alitaasbbq.jpeg" alt="Foto de Alitas BBQ" class="menu-img-placeholder" onerror="this.style.display='none'">
-          <div class="marco-fallback"><span class="icono">🍗</span></div>
+          <div class="marco-fallback"><span class="icono"></span></div>
         </div>
         <div class="item-body">
           <div class="item-info">
@@ -730,7 +723,7 @@
         <div class="item-foto">
           <!-- FOTO: Alitas Miel y Mostaza — pega el link o ruta de la imagen en el src -->
           <img src="img/WhatsApp Image 2026-08-16 at 16.00.43.jpeg" alt="Foto de Alitas Miel y Mostaza" class="menu-img-placeholder" onerror="this.style.display='none'">
-          <div class="marco-fallback"><span class="icono">🍗</span></div>
+          <div class="marco-fallback"><span class="icono"></span></div>
         </div>
         <div class="item-body">
           <div class="item-info">
@@ -751,7 +744,7 @@
         <div class="item-foto">
           <!-- FOTO: Alitas Tradicionales — pega el link o ruta de la imagen en el src -->
           <img src="img/tradicionales.jpeg" alt="Foto de Alitas Tradicionales" class="menu-img-placeholder" onerror="this.style.display='none'">
-          <div class="marco-fallback"><span class="icono">🍗</span></div>
+          <div class="marco-fallback"><span class="icono"></span></div>
         </div>
         <div class="item-body">
           <div class="item-info">
@@ -789,7 +782,7 @@
         <div class="item-foto">
           <!-- FOTO: Pipocas de Pollo — pega el link o ruta de la imagen en el src -->
           <img src="img/pipocas.jpeg" alt="Foto de Pipocas de Pollo" class="menu-img-placeholder" onerror="this.style.display='none'">
-          <div class="marco-fallback"><span class="icono">🍿</span></div>
+          <div class="marco-fallback"><span class="icono"></span></div>
         </div>
         <div class="item-body">
           <div class="item-info">
@@ -826,7 +819,7 @@
         <div class="item-foto">
           <!-- FOTO: Hamburguesa Cheddar — pega el link o ruta de la imagen en el src -->
           <img src="img/hambuergesa_cheddar.jpeg" alt="Foto de Hamburguesa Cheddar" class="menu-img-placeholder" onerror="this.style.display='none'">
-          <div class="marco-fallback"><span class="icono">🍔</span></div>
+          <div class="marco-fallback"><span class="icono"></span></div>
         </div>
         <div class="item-body">
           <div class="item-info">
@@ -847,7 +840,7 @@
         <div class="item-foto">
           <!-- FOTO: Hamburguesa Barbacoa — pega el link o ruta de la imagen en el src -->
           <img src="img/WhatsApp Image 2026-08-16 at 14.56.02.jpeg" alt="Foto de Hamburguesa Barbacoa" class="menu-img-placeholder" onerror="this.style.display='none'">
-          <div class="marco-fallback"><span class="icono">🍔</span></div>
+          <div class="marco-fallback"><span class="icono"></span></div>
         </div>
         <div class="item-body">
           <div class="item-info">
@@ -868,7 +861,7 @@
         <div class="item-foto">
           <!-- FOTO: Hamburguesa Normal — pega el link o ruta de la imagen en el src -->
           <img src="img/hamburgesa_tradicional.jpeg" alt="Foto de Hamburguesa Normal" class="menu-img-placeholder" onerror="this.style.display='none'">
-          <div class="marco-fallback"><span class="icono">🍔</span></div>
+          <div class="marco-fallback"><span class="icono"></span></div>
         </div>
         <div class="item-body">
           <div class="item-info">
@@ -930,9 +923,9 @@
 
     <div class="tarjeta-mapa">
       <div class="marco-mapa">
-        <!-- Mapa incrustado con la dirección del local. Puedes reemplazar el src por tu propio enlace "Insertar mapa" de Google Maps -->
+        <!-- Mapa incrustado apuntando directo a las coordenadas exactas del local (17°35'58.1"S 63°08'31.2"W) -->
         <iframe
-          src="https://www.google.com/maps?q=C%2FNicaragua%2C+Satelite+Norte%2C+Warnes%2C+Bolivia&output=embed"
+          src="https://maps.google.com/maps?q=-17.599464,-63.1419897&hl=es&z=18&output=embed"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           title="Ubicación de CHIKEN Y.A en el mapa">
@@ -945,7 +938,7 @@
           </svg>
           C/Nicaragua, Satélite Norte - Warnes
         </div>
-        <a class="btn btn-ubicacion" href="https://www.google.com/maps/search/?api=1&query=C%2FNicaragua%2C+Satelite+Norte%2C+Warnes%2C+Bolivia" target="_blank" rel="noopener">Ver ubicación</a>
+        <a class="btn btn-ubicacion" href="https://www.google.com/maps/place/Chiken+Y.A/@-17.599464,-63.1419897,18z/data=!4m6!3m5!1s0x93f1e1f41c6254e5:0x7fc8387e38958120!8m2!3d-17.599464!4d-63.1419897!16s%2Fg%2F11zdzgtlt0?hl=es" target="_blank" rel="noopener">Ver ubicación</a>
       </div>
     </div>
 
@@ -993,7 +986,7 @@
         <h4>Horario</h4>
         <ul>
           <li>Todos los días</li>
-          <li>12:00 – 22:00</li>
+          <li>18:00 – 22:00</li>
         </ul>
       </div>
     </div>
